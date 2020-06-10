@@ -12,10 +12,19 @@ RUN apt-get update && \
 
 RUN pip3 install pydotplus graphviz
 
-RUN git clone --depth 1 https://github.com/NVIDIA-AI-IOT/torch2trt && \
+RUN git clone https://github.com/NVIDIA-AI-IOT/torch2trt && \
     cd torch2trt && \
     python3 setup.py install --plugins && \
     cd ../ && \
     rm -rf torch2trt
+
+WORKDIR /
+
+RUN git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples && \
+	cd torchvision2trt-samples/plugin && \
+	mkdir build && \
+	cd build && \
+	cmake .. && \
+	make
 
 WORKDIR /
