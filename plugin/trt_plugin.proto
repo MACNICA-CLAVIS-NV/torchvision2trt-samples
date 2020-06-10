@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package macnica_trt_plugins;
+
+enum DataTypeMessage {
+    kFloat = 0;
+    kHalf = 1;
+    kInt8 = 2;
+    kInt32 = 3;
+}
+
+enum PoolingMode {
+    Maximum = 0;
+    Average = 1;
+}
+
+enum AlgoImpl {
+    CUDA = 0;
+    CuDNN = 1;
+}
+
+message pooling_Message {
+    repeated int64 dims = 1;
+    PoolingMode mode = 2;
+    repeated int64 window = 3;
+    repeated int64 stride = 4;
+    AlgoImpl impl = 5;
+}
+
+message copy_Message {
+    repeated int64 dims = 1;
+}
