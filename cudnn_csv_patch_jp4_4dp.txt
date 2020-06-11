@@ -1,0 +1,42 @@
+--- cudnn.csv	2020-06-11 10:45:54.054190640 +0900
++++ cudnn_rev.csv	2020-06-11 10:51:47.619612821 +0900
+@@ -22,15 +22,15 @@
+ lib,  /usr/lib/aarch64-linux-gnu/libcudnn_cnn_train.so.8.0.0                                             
+ sym,  /usr/lib/aarch64-linux-gnu/libcudnn_cnn_train.so.8                                                                            
+ sym,  /usr/lib/aarch64-linux-gnu/libcudnn_cnn_train.so 
+-lib,  /usr/include/cudnn_adv_infer.h
+-lib,  /usr/include/cudnn_adv_train.h
+-lib,  /usr/include/cudnn_backend.h
+-lib,  /usr/include/cudnn_cnn_infer.h
+-lib,  /usr/include/cudnn_cnn_train.h
+-lib,  /usr/include/cudnn.h
+-lib,  /usr/include/cudnn_ops_infer.h
+-lib,  /usr/include/cudnn_ops_train.h
+-lib,  /usr/include/cudnn_version.h
++sym,  /usr/include/cudnn_adv_infer.h
++sym,  /usr/include/cudnn_adv_train.h
++sym,  /usr/include/cudnn_backend.h
++sym,  /usr/include/cudnn_cnn_infer.h
++sym,  /usr/include/cudnn_cnn_train.h
++sym,  /usr/include/cudnn.h
++sym,  /usr/include/cudnn_ops_infer.h
++sym,  /usr/include/cudnn_ops_train.h
++sym,  /usr/include/cudnn_version.h
+ lib,/usr/include/aarch64-linux-gnu/cudnn_adv_train_v8.h
+ lib,/usr/include/aarch64-linux-gnu/cudnn_cnn_infer_v8.h
+ lib,/usr/include/aarch64-linux-gnu/cudnn_cnn_train_v8.h
+@@ -39,6 +39,14 @@
+ lib,/usr/include/aarch64-linux-gnu/cudnn_v8.h
+ lib,/usr/include/aarch64-linux-gnu/cudnn_version_v8.h
+ sym,  /etc/alternatives/libcudnn
++sym,  /etc/alternatives/cudnn_adv_infer_h
++sym,  /etc/alternatives/cudnn_backend_h
++sym,  /etc/alternatives/cudnn_cnn_train_h
++sym,  /etc/alternatives/cudnn_ops_train_h
++sym,  /etc/alternatives/cudnn_adv_train_h
++sym,  /etc/alternatives/cudnn_cnn_infer_h
++sym,  /etc/alternatives/cudnn_ops_infer_h
++sym,  /etc/alternatives/cudnn_version_h
+ sym,  /etc/alternatives/libcudnn_adv_infer_so
+ sym,  /etc/alternatives/libcudnn_adv_infer_stlib
+ sym,  /etc/alternatives/libcudnn_adv_train_so
