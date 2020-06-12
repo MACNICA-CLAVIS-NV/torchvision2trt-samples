@@ -37,12 +37,12 @@
 ### Increase swap memory **(Only for Jetson Nano)**  
 The default 2GB swap memory is insufficient. Increse it to 4GB as described at [JetsonHacks - Jetson Nano – Even More Swap](https://www.jetsonhacks.com/2019/11/28/jetson-nano-even-more-swap/)
 
-### Build a docker container locally
+### Build a docker image locally
 1. Download the Dockerfile to your Jetson developer kit.
     ```
     $ wget https://raw.githubusercontent.com/MACNICA-CLAVIS-NV/torchvision2trt-samples/master/Dockerfile
     ```
-1. Build a docker container
+1. Build a docker image
     ```
     $ sudo docker build -t torchvision2trt-samples:1 .
     ```
