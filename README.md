@@ -58,3 +58,4 @@ The default 2GB swap memory is insufficient. Increse it to 4GB as described at [
     ```
     $ sudo docker run -it --rm --net=host --runtime nvidia -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix -v $HOME:$HOME torchvision2trt-samples:1
     ```
+1. Open [localhost:8888](localhost:8888) from Web browser.
