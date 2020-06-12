@@ -1,5 +1,5 @@
---- cudnn.csv	2020-06-11 10:45:54.054190640 +0900
-+++ cudnn_rev.csv	2020-06-11 10:51:47.619612821 +0900
+--- cudnn.csv	2020-06-12 10:08:44.167356439 +0900
++++ cudnn_new.csv	2020-06-12 10:14:07.229349438 +0900
 @@ -22,15 +22,15 @@
  lib,  /usr/lib/aarch64-linux-gnu/libcudnn_cnn_train.so.8.0.0                                             
  sym,  /usr/lib/aarch64-linux-gnu/libcudnn_cnn_train.so.8                                                                            
