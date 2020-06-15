@@ -6,17 +6,13 @@
 
 ## Jupyter notebooks
 
-1. PyTorch inference  
-    [torchvision_normal.ipynb](./torchvision_normal.ipynb)
+1. PyTorch inference [torchvision_normal.ipynb](./torchvision_normal.ipynb)
 
-1. TensorRT inference with ONNX model  
-    [torchvision_onnx.ipynb](./torchvision_onnx.ipynb)
+1. TensorRT inference with ONNX model [torchvision_onnx.ipynb](./torchvision_onnx.ipynb)
 
-1. TensorRT inference with torch2trt  
-    [torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)
+1. TensorRT inference with torch2trt [torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)
 
-1. TensorRT Inference with TensorRT API  
-    [torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)
+1. TensorRT Inference with TensorRT API [torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)
 
 ## Prerequisites
 - NVIDIA Jetson Series Developer Kits
