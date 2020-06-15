@@ -6,7 +6,7 @@
 
 ## Jupyter notebooks
 
-1. PyTorch inference: [torchvision_normal.ipynb](./torchvision_normal.ipynb)  
+1. PyTorch inference \([torchvision_normal.ipynb](./torchvision_normal.ipynb)\)  
     ![](./doc/torchvision-normal.svg)
 
 1. TensorRT inference with ONNX model: [torchvision_onnx.ipynb](./torchvision_onnx.ipynb)
