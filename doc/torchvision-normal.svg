@@ -12,13 +12,13 @@
 <!-- dat1 -->
 <g id="node1" class="node">
 <title>dat1</title>
-<ellipse fill="#97ffff" stroke="black" cx="118.79" cy="-18.38" rx="118.59" ry="18.27"/>
+<ellipse fill="white" stroke="black" cx="118.79" cy="-18.38" rx="118.59" ry="18.27"/>
 <text text-anchor="middle" x="118.79" y="-14.58" font-family="Times,serif" font-size="16.00">Torchvision Model</text>
 </g>
 <!-- proc1 -->
 <g id="node2" class="node">
 <title>proc1</title>
-<polygon fill="#97ffff" stroke="black" points="356.59,-36.38 273.59,-36.38 273.59,-0.38 356.59,-0.38 356.59,-36.38"/>
+<polygon fill="white" stroke="black" points="356.59,-36.38 273.59,-36.38 273.59,-0.38 356.59,-0.38 356.59,-36.38"/>
 <text text-anchor="middle" x="315.09" y="-14.58" font-family="Times,serif" font-size="16.00">PyTorch</text>
 </g>
 <!-- dat1&#45;&gt;proc1 -->
