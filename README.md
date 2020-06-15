@@ -7,6 +7,7 @@
 ## Jupyter notebooks
 
 1. PyTorch inference \([torchvision_normal.ipynb](./torchvision_normal.ipynb)\)  
+    This notebook shows how to do inference by GPU in PyTorch.  
     ![](./doc/torchvision-normal.svg)
 
 1. TensorRT inference with ONNX model \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)  
