@@ -46,7 +46,7 @@
         ```
         $ sudo patch -u /etc/nvidia-container-runtime/host-files-for-container.d/cudnn.csv <cudnn_csv_patch_jp4_4dp.txt
         ``` 
-1. Fix the line breaks of the configuration file **(Only for JetPack 4.4DP)** Refer to [this link](https://github.com/dusty-nv/jetson-containers/issues/3#issuecomment-638541303)
+1. Fix the line breaks of the configuration file as described at [this link](https://github.com/dusty-nv/jetson-containers/issues/3#issuecomment-638541303)  **(Only for JetPack 4.4DP)**
     ```
     $ sudo apt update
     $ sudo apt install dos2unix
