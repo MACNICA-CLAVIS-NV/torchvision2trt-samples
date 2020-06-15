@@ -19,7 +19,7 @@
     ![](./doc/torchvision-torch2trt.svg)
 
 1. TensorRT Inference with TensorRT API \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
-    This notebook  shows how to inport a pre-trained PyTorch model data (weights and bias) with a user-defined network with the TensorRT API. This notebook also shows how to use custom layers with the TensorRT API.
+    This notebook  shows how to inport a pre-trained PyTorch model data (weights and bias) with a user-defined network with the TensorRT API. This notebook also shows how to use custom layers with the TensorRT API.  
     ![](./doc/torchvision-trtapi.svg)
 
 ## Prerequisites
