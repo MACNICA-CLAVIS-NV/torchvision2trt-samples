@@ -61,4 +61,4 @@ The default 2GB swap memory is insufficient. Increse it to 4GB as described at [
 1. Open [localhost:8888](http://localhost:8888) from Web browser.
 
 1. You can find these samples at the /torchvision2trt-samples directory as the following picture.
-![Screenshot1](./screenshot1.jpg)
+![Screenshot1](./screenshot.jpg)
