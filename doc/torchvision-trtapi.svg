@@ -12,14 +12,14 @@
 <!-- dat1 -->
 <g id="node1" class="node">
 <title>dat1</title>
-<ellipse fill="lightgrey" stroke="black" cx="123.04" cy="-165.38" rx="118.59" ry="31.23"/>
+<ellipse fill="#97ffff" stroke="black" cx="123.04" cy="-165.38" rx="118.59" ry="31.23"/>
 <text text-anchor="middle" x="123.04" y="-170.58" font-family="Times,serif" font-size="16.00">Torchvision Model</text>
 <text text-anchor="middle" x="123.04" y="-152.58" font-family="Times,serif" font-size="16.00">(Weights, Bias)</text>
 </g>
 <!-- proc1 -->
 <g id="node4" class="node">
 <title>proc1</title>
-<polygon fill="lightgrey" stroke="black" points="377.07,-103.38 282.07,-103.38 282.07,-67.38 377.07,-67.38 377.07,-103.38"/>
+<polygon fill="#97ffff" stroke="black" points="377.07,-103.38 282.07,-103.38 282.07,-67.38 377.07,-67.38 377.07,-103.38"/>
 <text text-anchor="middle" x="329.57" y="-81.58" font-family="Times,serif" font-size="16.00">TensorRT</text>
 </g>
 <!-- dat1&#45;&gt;proc1 -->
@@ -31,7 +31,7 @@
 <!-- dat2 -->
 <g id="node2" class="node">
 <title>dat2</title>
-<ellipse fill="lightgrey" stroke="black" cx="123.04" cy="-85.38" rx="123.07" ry="31.23"/>
+<ellipse fill="#97ffff" stroke="black" cx="123.04" cy="-85.38" rx="123.07" ry="31.23"/>
 <text text-anchor="middle" x="123.04" y="-90.58" font-family="Times,serif" font-size="16.00">Network Definition</text>
 <text text-anchor="middle" x="123.04" y="-72.58" font-family="Times,serif" font-size="16.00">with TensorRT API</text>
 </g>
@@ -44,7 +44,7 @@
 <!-- dat3 -->
 <g id="node3" class="node">
 <title>dat3</title>
-<ellipse fill="lightgrey" stroke="black" cx="123.04" cy="-18.38" rx="92.76" ry="18.27"/>
+<ellipse fill="#97ffff" stroke="black" cx="123.04" cy="-18.38" rx="92.76" ry="18.27"/>
 <text text-anchor="middle" x="123.04" y="-14.58" font-family="Times,serif" font-size="16.00">Custom Layer</text>
 </g>
 <!-- dat3&#45;&gt;proc1 -->
@@ -56,7 +56,7 @@
 <!-- dat4 -->
 <g id="node5" class="node">
 <title>dat4</title>
-<ellipse fill="lightgrey" stroke="black" cx="524.8" cy="-85.38" rx="111.95" ry="18.27"/>
+<ellipse fill="#97ffff" stroke="black" cx="524.8" cy="-85.38" rx="111.95" ry="18.27"/>
 <text text-anchor="middle" x="524.8" y="-81.58" font-family="Times,serif" font-size="16.00">TensorRT Engine</text>
 </g>
 <!-- proc1&#45;&gt;dat4 -->

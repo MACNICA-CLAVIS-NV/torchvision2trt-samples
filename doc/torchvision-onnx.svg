@@ -12,14 +12,14 @@
 <!-- dat1 -->
 <g id="node1" class="node">
 <title>dat1</title>
-<ellipse fill="lightgrey" stroke="black" cx="78.49" cy="-31.11" rx="78.48" ry="31.23"/>
+<ellipse fill="#97ffff" stroke="black" cx="78.49" cy="-31.11" rx="78.48" ry="31.23"/>
 <text text-anchor="middle" x="78.49" y="-36.31" font-family="Times,serif" font-size="16.00">Torchvision</text>
 <text text-anchor="middle" x="78.49" y="-18.31" font-family="Times,serif" font-size="16.00">Model</text>
 </g>
 <!-- proc1 -->
 <g id="node2" class="node">
 <title>proc1</title>
-<polygon fill="lightgrey" stroke="black" points="275.98,-49.11 192.98,-49.11 192.98,-13.11 275.98,-13.11 275.98,-49.11"/>
+<polygon fill="#97ffff" stroke="black" points="275.98,-49.11 192.98,-49.11 192.98,-13.11 275.98,-13.11 275.98,-49.11"/>
 <text text-anchor="middle" x="234.48" y="-27.31" font-family="Times,serif" font-size="16.00">PyTorch</text>
 </g>
 <!-- dat1&#45;&gt;proc1 -->
@@ -31,7 +31,7 @@
 <!-- dat2 -->
 <g id="node3" class="node">
 <title>dat2</title>
-<ellipse fill="lightgrey" stroke="black" cx="360.77" cy="-31.11" rx="48.58" ry="31.23"/>
+<ellipse fill="#97ffff" stroke="black" cx="360.77" cy="-31.11" rx="48.58" ry="31.23"/>
 <text text-anchor="middle" x="360.77" y="-36.31" font-family="Times,serif" font-size="16.00">ONNX</text>
 <text text-anchor="middle" x="360.77" y="-18.31" font-family="Times,serif" font-size="16.00">Model</text>
 </g>
@@ -44,7 +44,7 @@
 <!-- proc2 -->
 <g id="node4" class="node">
 <title>proc2</title>
-<polygon fill="lightgrey" stroke="black" points="540.56,-49.11 445.56,-49.11 445.56,-13.11 540.56,-13.11 540.56,-49.11"/>
+<polygon fill="#97ffff" stroke="black" points="540.56,-49.11 445.56,-49.11 445.56,-13.11 540.56,-13.11 540.56,-49.11"/>
 <text text-anchor="middle" x="493.06" y="-27.31" font-family="Times,serif" font-size="16.00">TensorRT</text>
 </g>
 <!-- dat2&#45;&gt;proc2 -->
@@ -56,7 +56,7 @@
 <!-- dat3 -->
 <g id="node5" class="node">
 <title>dat3</title>
-<ellipse fill="lightgrey" stroke="black" cx="643.73" cy="-31.11" rx="67.35" ry="31.23"/>
+<ellipse fill="#97ffff" stroke="black" cx="643.73" cy="-31.11" rx="67.35" ry="31.23"/>
 <text text-anchor="middle" x="643.73" y="-36.31" font-family="Times,serif" font-size="16.00">TensorRT</text>
 <text text-anchor="middle" x="643.73" y="-18.31" font-family="Times,serif" font-size="16.00">Engine</text>
 </g>

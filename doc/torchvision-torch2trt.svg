@@ -12,13 +12,13 @@
 <!-- dat1 -->
 <g id="node1" class="node">
 <title>dat1</title>
-<ellipse fill="lightgrey" stroke="black" cx="118.79" cy="-73.38" rx="118.59" ry="18.27"/>
+<ellipse fill="#97ffff" stroke="black" cx="118.79" cy="-73.38" rx="118.59" ry="18.27"/>
 <text text-anchor="middle" x="118.79" y="-69.58" font-family="Times,serif" font-size="16.00">Torchvision Model</text>
 </g>
 <!-- proc1 -->
 <g id="node3" class="node">
 <title>proc1</title>
-<polygon fill="lightgrey" stroke="black" points="365.59,-63.38 273.59,-63.38 273.59,-27.38 365.59,-27.38 365.59,-63.38"/>
+<polygon fill="#97ffff" stroke="black" points="365.59,-63.38 273.59,-63.38 273.59,-27.38 365.59,-27.38 365.59,-63.38"/>
 <text text-anchor="middle" x="319.59" y="-41.58" font-family="Times,serif" font-size="16.00">torch2trt</text>
 </g>
 <!-- dat1&#45;&gt;proc1 -->
@@ -30,7 +30,7 @@
 <!-- dat2 -->
 <g id="node2" class="node">
 <title>dat2</title>
-<ellipse fill="lightgrey" stroke="black" cx="118.79" cy="-18.38" rx="92.76" ry="18.27"/>
+<ellipse fill="#97ffff" stroke="black" cx="118.79" cy="-18.38" rx="92.76" ry="18.27"/>
 <text text-anchor="middle" x="118.79" y="-14.58" font-family="Times,serif" font-size="16.00">Custom Layer</text>
 </g>
 <!-- dat2&#45;&gt;proc1 -->
@@ -42,7 +42,7 @@
 <!-- proc2 -->
 <g id="node4" class="node">
 <title>proc2</title>
-<polygon fill="lightgrey" stroke="black" points="496.59,-63.38 401.59,-63.38 401.59,-27.38 496.59,-27.38 496.59,-63.38"/>
+<polygon fill="#97ffff" stroke="black" points="496.59,-63.38 401.59,-63.38 401.59,-27.38 496.59,-27.38 496.59,-63.38"/>
 <text text-anchor="middle" x="449.09" y="-41.58" font-family="Times,serif" font-size="16.00">TensorRT</text>
 </g>
 <!-- proc1&#45;&gt;proc2 -->
@@ -54,7 +54,7 @@
 <!-- dat3 -->
 <g id="node5" class="node">
 <title>dat3</title>
-<ellipse fill="lightgrey" stroke="black" cx="599.76" cy="-45.38" rx="67.35" ry="31.23"/>
+<ellipse fill="#97ffff" stroke="black" cx="599.76" cy="-45.38" rx="67.35" ry="31.23"/>
 <text text-anchor="middle" x="599.76" y="-50.58" font-family="Times,serif" font-size="16.00">TensorRT</text>
 <text text-anchor="middle" x="599.76" y="-32.58" font-family="Times,serif" font-size="16.00">Engine</text>
 </g>
