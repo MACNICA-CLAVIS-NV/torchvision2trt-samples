@@ -11,10 +11,11 @@
     ![](./doc/torchvision-normal.svg)
 
 1. TensorRT inference with ONNX model \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)  
-    This notebook shows how to convert a PyTorch model to a ONNX model first, and also shows how to do inference by TensorRT with the ONNX model.  
+    This notebook shows how to convert a PyTorch pre-trained model to a ONNX model first, and also shows how to do inference by TensorRT with the ONNX model.  
     ![](./doc/torchvision-onnx.svg)
 
 1. TensorRT inference with torch2trt \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
+    This notebook shows how to inport a pre-trained PyTorch model to TensorRT with [torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt). This notebook also shows how to use a user custom layer with torch2trt.  
     ![](./doc/torchvision-torch2trt.svg)
 
 1. TensorRT Inference with TensorRT API \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
