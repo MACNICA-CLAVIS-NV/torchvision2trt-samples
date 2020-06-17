@@ -82,3 +82,74 @@ The default 2GB swap memory is insufficient. Increse it to 4GB as described at [
 
 1. You can find these samples at the **/torchvision2trt-samples** directory as the following picture.
 ![Screenshot1](./doc/screenshot.jpg)
+
+## How to rebuild the pooling plugin library
+
+1. Open a terminal (Click the terminal button as shown in the following figure.)
+
+2. Follow the following the following instruction.
+
+    ```
+    # cd /torchvision2trt-samples/plugin
+
+    # rm -R build
+
+    # mkdir build
+
+    # cd build
+
+    # cmake ..
+    -- The CXX compiler identification is GNU 7.5.0
+    -- The CUDA compiler identification is NVIDIA 10.2.89
+    -- Check for working CXX compiler: /usr/bin/c++
+    -- Check for working CXX compiler: /usr/bin/c++ -- works
+    -- Detecting CXX compiler ABI info
+    -- Detecting CXX compiler ABI info - done
+    -- Detecting CXX compile features
+    -- Detecting CXX compile features - done
+    -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc
+    -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc -- works
+    -- Detecting CUDA compiler ABI info
+    -- Detecting CUDA compiler ABI info - done
+    -- Looking for C++ include pthread.h
+    -- Looking for C++ include pthread.h - found
+    -- Looking for pthread_create
+    -- Looking for pthread_create - not found
+    -- Looking for pthread_create in pthreads
+    -- Looking for pthread_create in pthreads - not found
+    -- Looking for pthread_create in pthread
+    -- Looking for pthread_create in pthread - found
+    -- Found Threads: TRUE  
+    -- Found Protobuf: /usr/lib/aarch64-linux-gnu/libprotobuf.so;-lpthread (found version "3.0.0") 
+    -- Configurable variable Protobuf_VERSION set to 3.0.0
+    -- Configurable variable Protobuf_INCLUDE_DIRS set to /usr/include
+    -- Configurable variable Protobuf_LIBRARIES set to /usr/lib/aarch64-linux-gnu/libprotobuf.so;-lpthread
+    -- Found CUDA: /usr/local/cuda (found version "10.2") 
+    -- Configurable variable CUDA_VERSION set to 10.2
+    -- Configurable variable CUDA_INCLUDE_DIRS set to /usr/local/cuda/include
+    -- Found CUDNN: /usr/include  
+    -- Found cuDNN: v?  (include: /usr/include, library: /usr/lib/aarch64-linux-gnu/libcudnn.so)
+    -- Configurable variable CUDNN_VERSION set to ?
+    -- Configurable variable CUDNN_INCLUDE_DIRS set to /usr/include
+    -- Configurable variable CUDNN_LIBRARIES set to /usr/lib/aarch64-linux-gnu/libcudnn.so
+    -- Configurable variable CUDNN_LIBRARY_DIRS set to 
+    -- Found TensorRT: /usr/lib/aarch64-linux-gnu/libnvinfer.so (found version "..") 
+    -- Configurable variable TensorRT_VERSION_STRING set to ..
+    -- Configurable variable TensorRT_INCLUDE_DIRS set to /usr/include/aarch64-linux-gnu
+    -- Configurable variable TensorRT_LIBRARIES set to /usr/lib/aarch64-linux-gnu/libnvinfer.so
+    -- Configuring done
+    -- Generating done
+    -- Build files have been written to: /torchvision2trt-samples/plugin/build
+
+    # make
+    Scanning dependencies of target PoolingPlugin
+    [ 12%] Building CUDA object CMakeFiles/PoolingPlugin.dir/PoolingAlgo.cu.o
+    [ 25%] Building CXX object CMakeFiles/PoolingPlugin.dir/CudaPooling.cpp.o
+    [ 37%] Building CXX object CMakeFiles/PoolingPlugin.dir/trt_plugin.pb.cpp.o
+    [ 50%] Building CXX object CMakeFiles/PoolingPlugin.dir/PoolingPlugin.cpp.o
+    [ 62%] Building CXX object CMakeFiles/PoolingPlugin.dir/CuDnnPooling.cpp.o
+    [ 75%] Building CXX object CMakeFiles/PoolingPlugin.dir/CopyPlugin.cpp.o
+    [ 87%] Linking CUDA device code CMakeFiles/PoolingPlugin.dir/cmake_device_link.o
+    [100%] Linking CXX shared module libPoolingPlugin.so
+    [100%] Built target PoolingPlugin
+    ```
