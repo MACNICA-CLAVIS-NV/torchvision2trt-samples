@@ -72,7 +72,7 @@ The default 2GB swap memory is insufficient. Increse it to 4GB as described at [
 
 ## Usage
 
-**For Jetson Nano, you sometimes see the low memory warning on Jetson's L4T desktop while you run these notebooks. To run these notebooks on Jetson Nano, logout the desktop, and login to the Jetson Nano from your PC with network access, and open these notebooks in a Web browser of your PC remotely.**
+**For Jetson Nano, you sometimes see the low memory warning on Jetson's L4T desktop while you run these notebooks. To run these notebooks on Jetson Nano, logout the desktop, and login to the Jetson Nano from your PC with network access, and open these notebooks in a Web browser of your PC remotely. It seems that this method reduces Jetson Nano's memory usage.**
 
 1. Run a docker container generated from the image built as the above.
     ```
