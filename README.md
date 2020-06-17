@@ -85,7 +85,8 @@ The default 2GB swap memory is insufficient. Increse it to 4GB as described at [
 
 ## How to rebuild the pooling plugin library
 
-1. Open a terminal (Click the terminal button as shown in the following figure.)
+1. Open a terminal (Click the terminal button as shown in the following figure.)  
+![Screenshot1](./doc/screenshot2.jpg)
 
 2. Follow the following the following instruction.
 
