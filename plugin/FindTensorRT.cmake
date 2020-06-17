@@ -17,6 +17,8 @@
 # ^^^^^
 # A user may set ``TensorRT_ROOT`` to an installation root to tell this module where to look.
 #
+# Borrowed from https://github.com/NVIDIA/tensorrt-laboratory/blob/master/cmake/FindTensorRT.cmake
+#
 set(_TensorRT_SEARCHES)
 
 if(TensorRT_ROOT)
