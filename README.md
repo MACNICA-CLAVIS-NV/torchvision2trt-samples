@@ -6,19 +6,19 @@
 
 ## Jupyter notebooks
 
-1. PyTorch inference \([torchvision_normal.ipynb](./torchvision_normal.ipynb)\)  
+1. **PyTorch inference** \([torchvision_normal.ipynb](./torchvision_normal.ipynb)\)  
     This notebook shows how to do inference by GPU in PyTorch.  
     ![](./doc/torchvision-normal.svg)
 
-1. TensorRT inference with ONNX model \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)  
+1. **TensorRT inference with ONNX model** \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)  
     This notebook shows how to convert a PyTorch pre-trained model to a ONNX model first, and also shows how to do inference by TensorRT with the ONNX model.  
     ![](./doc/torchvision-onnx.svg)
 
-1. TensorRT inference with torch2trt \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
+1. **TensorRT inference with torch2trt** \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
     This notebook shows how to import a pre-trained PyTorch model to TensorRT with [torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt). This notebook also shows how to use custom layers with torch2trt.  
     ![](./doc/torchvision-torch2trt.svg)
 
-1. TensorRT Inference with TensorRT API \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
+1. **TensorRT Inference with TensorRT API** \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
     This notebook  shows how to import a pre-trained PyTorch model data (weights and bias) with a user-defined network with the TensorRT API. This notebook also shows how to use custom layers with the TensorRT API.  
     ![](./doc/torchvision-trtapi.svg)
 
