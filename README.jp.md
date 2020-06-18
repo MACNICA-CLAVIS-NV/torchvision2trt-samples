@@ -21,7 +21,7 @@
     ![](./doc/torchvision-torch2trt.svg)
 
 1. **TensorRT Inference with TensorRT API** \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
-    学習済みPyTorchモデルから重みデータとバイアスデータのみを取り出し、TensorRT APIを利用して構築したネットワーク構造に適用して、TensorRTで推論します。  
+    学習済みPyTorchモデルから重みデータとバイアスデータのみを取り出し、TensorRT APIを利用して構築したネットワーク構造に適用して、TensorRTで推論します。併せて、カスタムレイヤーを使う方法も提示します。
     ![](./doc/torchvision-trtapi.svg)
 
 ## 前提とする環境
