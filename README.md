@@ -157,3 +157,10 @@ The default 2GB swap memory is insufficient. Increse it to 4GB as described at [
     [100%] Linking CXX shared module libPoolingPlugin.so
     [100%] Built target PoolingPlugin
     ```
+
+## References
+
+- [NVIDIA TensorRT](https://developer.nvidia.com/tensorrt)
+- [NVIDIA-AI-IOT/torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt)
+- [Developing Real-time Neural Networks for Jetson](https://www.nvidia.com/en-us/gtc/on-demand/?search=22676)
+- [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml)
