@@ -13,7 +13,7 @@
     ![](./doc/torchvision-normal.svg)
 
 1. **TensorRT inference with ONNX model** \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)  
-    まず、Torchvision学習済みモデルをONNX形式に変換、次に、それをTensorRT形式に変換して推論を行います。  
+    まず、PyTorch学習済みモデルをONNX形式に変換、次に、それをTensorRT形式に変換して推論を行います。  
     ![](./doc/torchvision-onnx.svg)
 
 1. **TensorRT inference with torch2trt** \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
