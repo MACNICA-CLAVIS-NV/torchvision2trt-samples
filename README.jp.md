@@ -8,19 +8,19 @@
 
 ## Jupyterノートブック
 
-1. PyTorch inference \([torchvision_normal.ipynb](./torchvision_normal.ipynb)\)
+1. PyTorch inference \([torchvision_normal.ipynb](./torchvision_normal.ipynb)\)  
     PyTorchで推論する方法を解説
     ![](./doc/torchvision-normal.svg)
 
-1. TensorRT inference with ONNX model \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)
+1. TensorRT inference with ONNX model \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)  
     まず、Torchvision学習済みモデルをONNX形式に変換、次に、それをTensorRT形式に変換して推論を行います。
     ![](./doc/torchvision-onnx.svg)
 
-1. TensorRT inference with torch2trt \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)
+1. TensorRT inference with torch2trt \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
     [torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt)を利用して、PyTorchモデルをTensorRTにインポートする方法を解説します。併せて、カスタムレイヤーを使う方法も提示します。
     ![](./doc/torchvision-torch2trt.svg)
 
-1. TensorRT Inference with TensorRT API \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)
+1. TensorRT Inference with TensorRT API \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
     学習済みPyTorchモデルから重みデータとバイアスデータのみを取り出し、TensorRT APIを利用して構築したネットワーク構造に適用して、TensorRTで推論します。
     ![](./doc/torchvision-trtapi.svg)
 
