@@ -13,7 +13,7 @@
     ![](./doc/torchvision-normal.svg)
 
 1. **TensorRT inference with ONNX model** \([torchvision_onnx.ipynb](./torchvision_onnx.ipynb)\)  
-    This notebook shows how to convert a PyTorch pre-trained model to a ONNX model first, and also shows how to do inference by TensorRT with the ONNX model.  
+    This notebook shows how to convert a pre-trained PyTorch model to a ONNX model first, and also shows how to do inference by TensorRT with the ONNX model.  
     ![](./doc/torchvision-onnx.svg)
 
 1. **TensorRT inference with torch2trt** \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
