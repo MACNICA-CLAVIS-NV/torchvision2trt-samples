@@ -35,7 +35,7 @@
 
 ### Docker環境の設定変更
 
-1. デフォルトのDockerランタイムを**nvidia**に設定します。詳細は [このリンク](https://github.com/dusty-nv/jetson-containers#docker-default-runtime)をご覧ください。
+1. デフォルトのDockerランタイムを**nvidia**に設定します。その方法は [このリンク](https://github.com/dusty-nv/jetson-containers#docker-default-runtime)をご覧ください。
 1. CuDNN関連ヘッダファイルがDockerコンテナ内から見つけられない問題を修正します。**(Jetson Nano向けJetPack 4.4DP SDカードを利用した場合)**
     1. 以下のとおりパッチファイルをダウンロードします。
         ```
