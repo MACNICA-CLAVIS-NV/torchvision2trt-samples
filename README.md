@@ -28,8 +28,8 @@
 
 ## Installation
 
-**This application can be installed with Dockerfile so that you don't need to clone this repository manually.**  
-**This application will be built on [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml) which is distributed from NVIDIA NGC.**
+- **This application can be installed with Dockerfile so that you don't need to clone this repository manually.**
+- **This application will be built on [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml) which is distributed from NVIDIA NGC.**
 
 ### Change docker configuration
 
