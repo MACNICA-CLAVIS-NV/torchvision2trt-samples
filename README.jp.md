@@ -82,7 +82,7 @@
     $ sudo docker run -it --rm --net=host --runtime nvidia -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix -v $HOME:$HOME torchvision2trt-samples:1
     ```
 1. [localhost:8888](http://localhost:8888)をウェブブラウザで開きます。PCからリモートログインした場合は、**localhost**の部分をJetsonのIPアドレスに変更してください。
-パスワードを問われますので**"nvidia"**を入力します。
+パスワードを問われますので　**"nvidia"**　を入力します。
 
 1. 下図のとおり、**/torchvision2trt-samples**ディレクトリに本アプリケーションは配置されています。
 ![Screenshot1](./doc/screenshot.jpg)
