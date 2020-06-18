@@ -30,7 +30,8 @@
 
 ## インストール方法
 
-**このアプリケーションはDockerfileを使ってインストールできます。ユーザーがgit cloneコマンドを実行する必要はありません。**
+- **このアプリケーションはDockerfileを使ってインストールできます。ユーザーがgit cloneコマンドを実行する必要はありません。**
+- **このアプリケーションはNVIDIA NGC上で公開されている[Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml)をベースにしています。**
 
 ### Docker環境の設定変更
 
