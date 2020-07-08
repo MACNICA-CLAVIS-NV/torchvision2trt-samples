@@ -41,7 +41,8 @@
 
 ### Increase swap memory **(Only for Jetson Nano)**
 
-The default 2GB swap memory is insufficient. Increse it to 4GB as described at [JetsonHacks - Jetson Nano – Even More Swap](https://www.jetsonhacks.com/2019/11/28/jetson-nano-even-more-swap/)
+The default 2GB swap memory is insufficient. Increse it to 4GB as described at [JetsonHacks - Jetson Nano – Even More Swap](https://www.jetsonhacks.com/2019/11/28/jetson-nano-even-more-swap/)  
+You need to restart Jetson after the swap memory expansion.
 
 ### Build a docker image locally
 
