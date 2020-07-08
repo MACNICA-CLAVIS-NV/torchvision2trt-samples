@@ -26,7 +26,7 @@
 
 ## 前提とする環境
 - NVIDIA Jetsonシリーズの開発者キット
-- NVIDIA JetPack 4.4 とそれ以降
+- NVIDIA JetPack 4.4 とそれ以降（JetPack 4.4 Developer Preview版はサポートしません。）
 
 ## インストール方法
 
@@ -36,25 +36,6 @@
 ### Docker環境の設定変更
 
 1. デフォルトのDockerランタイムを**nvidia**に設定します。その方法は [このリンク](https://github.com/dusty-nv/jetson-containers#docker-default-runtime)をご覧ください。
-1. CuDNN関連ヘッダファイルがDockerコンテナ内から見つけられない問題を修正します。**(Jetson Nano向けJetPack 4.4DP SDカードを利用した場合)**
-    1. 以下のとおりパッチファイルをダウンロードします。
-        ```
-        $ wget https://raw.githubusercontent.com/MACNICA-CLAVIS-NV/torchvision2trt-samples/master/cudnn_csv_patch_jp4_4dp.txt
-        ```
-    1. 元の設定ファイルをバックアップしておきます。
-        ```
-        $ cp /etc/nvidia-container-runtime/host-files-for-container.d/cudnn.csv ./cudnn.csv.bak
-        ```
-    1. 設定ファイルにパッチを適用します。
-        ```
-        $ sudo patch -u /etc/nvidia-container-runtime/host-files-for-container.d/cudnn.csv <cudnn_csv_patch_jp4_4dp.txt
-        ```
-1. 設定ファイルの改行コードを修正します。詳細は[このリンク](https://github.com/dusty-nv/jetson-containers/issues/3#issuecomment-638541303)参照してください。**(JetPack 4.4DPのみ)**
-    ```
-    $ sudo apt update
-    $ sudo apt install dos2unix
-    $ sudo dos2unix /etc/nvidia-container-runtime/host-files-for-container.d/cudnn.csv
-    ```
 
 1. Jetsonを再起動します。
 
