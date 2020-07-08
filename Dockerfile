@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/l4t-ml:r32.4.2-py3
+FROM nvcr.io/nvidia/l4t-ml:r32.4.3-py3
 
 WORKDIR /tmp
 
