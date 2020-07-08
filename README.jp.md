@@ -41,7 +41,7 @@
 
 ### スワップメモリの拡張 **(Jetson Nanoのみ)**
 
-デフォルトの2GBでは足りません。[JetsonHacks - Jetson Nano – Even More Swap](https://www.jetsonhacks.com/2019/11/28/jetson-nano-even-more-swap/)を参考に4GBに拡張してください。
+デフォルトの2GBでは足りません。[JetsonHacks - Jetson Nano – Even More Swap](https://www.jetsonhacks.com/2019/11/28/jetson-nano-even-more-swap/)を参考に4GBに拡張してください。拡張後、再起動が必要です。
 
 ### DockerイメージをJetson上でビルド
 
