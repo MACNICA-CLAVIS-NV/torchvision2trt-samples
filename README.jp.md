@@ -47,11 +47,15 @@
 
 1. DockerfileをJetsonにダウンロードします。
     ```
-    $ wget https://raw.githubusercontent.com/MACNICA-CLAVIS-NV/torchvision2trt-samples/master/Dockerfile
+    $ git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
     ```
 1. Dockerイメージをビルドします。
     ```
-    $ sudo docker build -t torchvision2trt-samples:1 .
+    $ cd torchvision2trt-samples
+
+    $ chmod +x ./scripts/*.sh
+
+    $ ./scripts/docker_build.sh
     ```
 
 ## 実行方法
@@ -60,7 +64,7 @@
 
 1. ビルドしたイメージからコンテナを生成します。
     ```
-    $ sudo docker run -it --rm --net=host --runtime nvidia -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix -v $HOME:$HOME torchvision2trt-samples:1
+    $ ./scripts/docker_run.sh
     ```
 1. [localhost:8888](http://localhost:8888)をウェブブラウザで開きます。PCからリモートログインした場合は、**localhost**の部分をJetsonのIPアドレスに変更してください。
 パスワードを問われますので　**"nvidia"**　を入力します。
