@@ -1,4 +1,12 @@
-FROM nvcr.io/nvidia/l4t-ml:r32.4.3-py3
+ARG BASE_IMAGE=nvcr.io/nvidia/l4t-ml:r32.5.0-py3
+FROM ${BASE_IMAGE}
+
+ARG REPOSITORY_NAME=torchvision2trt-samples
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LANG C.UTF-8
+ENV PATH="/usr/local/cuda/bin:${PATH}"
+ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
 
 WORKDIR /tmp
 
@@ -20,8 +28,10 @@ RUN git clone https://github.com/NVIDIA-AI-IOT/torch2trt && \
 
 WORKDIR /
 
-RUN git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples && \
-	cd torchvision2trt-samples/plugin && \
+RUN mkdir /${REPOSITORY_NAME}
+COPY ./ /${REPOSITORY_NAME}
+
+RUN cd /${REPOSITORY_NAME}/plugin && \
 	mkdir build && \
 	cd build && \
 	cmake .. && \
