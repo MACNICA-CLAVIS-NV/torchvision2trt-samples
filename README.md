@@ -46,13 +46,17 @@ You need to restart Jetson after the swap memory expansion.
 
 ### Build a docker image locally
 
-1. Download the Dockerfile to your Jetson developer kit.
+1. Clone this repository.
     ```
-    $ wget https://raw.githubusercontent.com/MACNICA-CLAVIS-NV/torchvision2trt-samples/master/Dockerfile
+    $ git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
     ```
 1. Build a docker image
     ```
-    $ sudo docker build -t torchvision2trt-samples:1 .
+    $ cd torchvision2trt-samples
+    
+    $ chmod +x ./scripts/*.sh
+    
+    $ ./scripts/docker_build.sh
     ```
 
 ## Usage
@@ -61,7 +65,7 @@ You need to restart Jetson after the swap memory expansion.
 
 1. Run a docker container generated from the image built as the above.
     ```
-    $ sudo docker run -it --rm --net=host --runtime nvidia -e DISPLAY=$DISPLAY -v /tmp/.X11-unix/:/tmp/.X11-unix -v $HOME:$HOME torchvision2trt-samples:1
+    $ ./scripts/docker_run.sh
     ```
 1. Open [localhost:8888](http://localhost:8888) from Web browser, and input the password **"nvidia"**.
 
