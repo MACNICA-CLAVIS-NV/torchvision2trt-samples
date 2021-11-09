@@ -1,4 +1,3 @@
-ARG BASE_IMAGE=nvcr.io/nvidia/l4t-ml:r32.5.0-py3
 FROM ${BASE_IMAGE}
 
 ARG REPOSITORY_NAME=torchvision2trt-samples
@@ -20,7 +19,8 @@ RUN apt-get update && \
 
 RUN pip3 install pydotplus graphviz
 
-RUN git clone https://github.com/NVIDIA-AI-IOT/torch2trt && \
+#RUN git clone https://github.com/NVIDIA-AI-IOT/torch2trt && \
+RUN git clone https://github.com/chitoku/torch2trt --branch jp4.6_tensorrt8 && \
     cd torch2trt && \
     python3 setup.py install --plugins && \
     cd ../ && \

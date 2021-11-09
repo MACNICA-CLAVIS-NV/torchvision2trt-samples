@@ -81,22 +81,22 @@ PoolingPlugin(pooling_Message message) : message(message)
 #endif
 }
 
-const char* getPluginType() const override
+AsciiChar const* getPluginType() const noexcept override
 {
     return ("pooling");
 }
 
-const char* getPluginVersion() const override
+AsciiChar const* getPluginVersion() const noexcept override
 {
     return ("1");
 }
 
-int getNbOutputs() const override
+int32_t getNbOutputs() const noexcept override
 {
     return (1);
 }
 
-Dims getOutputDimensions(int index, const Dims* inputs, int nbInputDims) override
+Dims getOutputDimensions(int index, const Dims* inputs, int nbInputDims) noexcept override
 {
     Dims    dims;
     
@@ -109,36 +109,38 @@ Dims getOutputDimensions(int index, const Dims* inputs, int nbInputDims) overrid
     return (dims);
 }
 
-bool supportsFormat(DataType type, PluginFormat format) const override
+bool supportsFormat(DataType type, PluginFormat format) const noexcept override
 {
     if (type != DataType::kFLOAT) {
         return (false);
     }
-    if (format != PluginFormat::kNCHW) {
+    //if (format != PluginFormat::kNCHW) {
+    if (format != PluginFormat::kLINEAR) {
         return (false);
     }
     return (true);
 }
 
-void configureWithFormat(const Dims* inputDims, int nbInputs, const Dims* outputDims, int nbOutputs, DataType type, PluginFormat format, int maxBatchSize) override
+void configureWithFormat(const Dims* inputDims, int nbInputs, const Dims* outputDims, int nbOutputs, DataType type, PluginFormat format, int maxBatchSize) noexcept override
 {
 }
 
-int initialize() override
-{
-    return (0);
-}
-
-void terminate() override
-{
-}
-
-size_t getWorkspaceSize(int maxBatchSize) const override
+int32_t initialize() noexcept override
 {
     return (0);
 }
 
-int enqueue(int batchSize, const void* const* inputs, void** outputs, void* workspace, cudaStream_t stream) override
+void terminate() noexcept override
+{
+}
+
+size_t getWorkspaceSize(int maxBatchSize) const noexcept override
+{
+    return (0);
+}
+
+int32_t enqueue(int32_t batchSize, void const* const* inputs, void* const* outputs, void* workspace,
+         cudaStream_t stream) noexcept override
 {
     //cudaStreamSynchronize(stream);
 
@@ -151,57 +153,60 @@ int enqueue(int batchSize, const void* const* inputs, void** outputs, void* work
     return (0);
 }
 
-size_t getSerializationSize() const override
+size_t getSerializationSize() const noexcept override
 {
     return (message.SerializeAsString().size());
 }
 
-void serialize(void* buffer) const override
+void serialize(void* buffer) const noexcept override
 {
     message.SerializeToArray(buffer, getSerializationSize());
 }
 
-void destroy() override
+void destroy() noexcept override
 {
     delete poolAlg;
 }
 
 #if 0
-IPluginV2* clone() const override
+IPluginV2* clone() const noexcept override
 {
     return (new PoolingPlugin(message));
 }
 #endif
 
-void setPluginNamespace(const char* pluginNamespace) override
+void setPluginNamespace(const char* pluginNamespace) noexcept override
 {
 }
 
-const char* getPluginNamespace() const override
+AsciiChar const* getPluginNamespace() const noexcept override
 {
     return ("macnica_trt_plugins");
 }
 
-nvinfer1::DataType getOutputDataType(int index, const nvinfer1::DataType* inputTypes, int nbInputs) const
+nvinfer1::DataType getOutputDataType(
+         int32_t index, nvinfer1::DataType const* inputTypes, int32_t nbInputs) const noexcept
 {
     return (DataType::kFLOAT);
 }
 
-bool isOutputBroadcastAcrossBatch(int outputIndex, const bool* inputIsBroadcasted, int nbInputs) const
+bool isOutputBroadcastAcrossBatch(int32_t outputIndex, const bool* inputIsBroadcasted, int32_t nbInputs) const noexcept
 {
     return (false);
 }
 
-bool canBroadcastInputAcrossBatch(int inputIndex) const
+bool canBroadcastInputAcrossBatch(int32_t inputIndex) const noexcept
 {
     return (false);
 }
 
-void configurePlugin(const Dims* inputDims, int nbInputs, const Dims* outputDims, int nbOutputs, const DataType* inputTypes, const DataType* outputTypes, const bool* inputIsBroadcast, const bool* outputIsBroadcast, PluginFormat floatFormat, int maxBatchSize)
+void configurePlugin(Dims const* inputDims, int32_t nbInputs, Dims const* outputDims, int32_t nbOutputs,
+         DataType const* inputTypes, DataType const* outputTypes, bool const* inputIsBroadcast,
+         bool const* outputIsBroadcast, PluginFormat floatFormat, int32_t maxBatchSize) noexcept
 {
 }
 
-IPluginV2Ext* clone() const
+IPluginV2Ext* clone() const noexcept override
 {
     return (new PoolingPlugin(message));
 }
@@ -216,38 +221,38 @@ PoolingPluginCreator()
 {
 }
 
-const char* getPluginName() const override
+AsciiChar const* getPluginName() const noexcept override
 {
     return ("pooling");
 }
     
-const char* getPluginVersion() const override
+AsciiChar const* getPluginVersion() const noexcept override
 {
     return ("1");
 }
 
-const PluginFieldCollection* getFieldNames() override
+PluginFieldCollection const* getFieldNames() noexcept override
 {
     return (nullptr);
 }
   
-IPluginV2* createPlugin(const char* name, const PluginFieldCollection* fc) override
+IPluginV2* createPlugin(AsciiChar const* name, const PluginFieldCollection* fc) noexcept override
 {
     return (nullptr);
 }
  
-IPluginV2* deserializePlugin(const char* name, const void* serialData, size_t serialLength) override
+IPluginV2* deserializePlugin(AsciiChar const* name, void const* serialData, size_t serialLength) noexcept override
 {
     pooling_Message message;
     message.ParseFromArray(serialData, serialLength);
     return (new PoolingPlugin(message));
 }
  
-void setPluginNamespace(const char* pluginNamespace) override
+void setPluginNamespace(AsciiChar const* pluginNamespace) noexcept override
 {
 }
  
-const char* getPluginNamespace() const override
+AsciiChar const* getPluginNamespace() const noexcept override
 {
     return ("macnica_trt_plugins");
 }

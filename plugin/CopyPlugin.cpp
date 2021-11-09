@@ -45,22 +45,22 @@ CopyPlugin(copy_Message message) : message(message)
     std::cout << "CopyPlugin called" << std::endl;
 }
 
-const char* getPluginType() const override
+AsciiChar const* getPluginType() const noexcept override
 {
     return ("copy");
 }
 
-const char* getPluginVersion() const override
+AsciiChar const* getPluginVersion() const noexcept override
 {
     return ("1");
 }
 
-int getNbOutputs() const override
+int32_t getNbOutputs() const noexcept override
 {
     return (1);
 }
 
-Dims getOutputDimensions(int index, const Dims* inputs, int nbInputDims) override
+Dims getOutputDimensions(int32_t index, const Dims* inputs, int32_t nbInputDims) noexcept override
 {
     Dims    dims;
     dims.nbDims = inputs->nbDims;
@@ -70,18 +70,19 @@ Dims getOutputDimensions(int index, const Dims* inputs, int nbInputDims) overrid
     return (dims);
 }
 
-bool supportsFormat(DataType type, PluginFormat format) const override
+bool supportsFormat(DataType type, PluginFormat format) const noexcept override
 {
     if (type != DataType::kFLOAT) {
         return (false);
     }
-    if (format != PluginFormat::kNCHW) {
+    //if (format != PluginFormat::kNCHW) {
+    if (format != PluginFormat::kLINEAR) {
         return (false);
     }
     return (true);
 }
 
-void configureWithFormat(const Dims* inputDims, int nbInputs, const Dims* outputDims, int nbOutputs, DataType type, PluginFormat format, int maxBatchSize) override
+void configureWithFormat(const Dims* inputDims, int32_t nbInputs, const Dims* outputDims, int32_t nbOutputs, DataType type, PluginFormat format, int32_t maxBatchSize) noexcept override
 {
     std::cout << "configureWithFormat called" << std::endl;
     for (int i = 0;i < inputDims->nbDims;i++) {
@@ -96,23 +97,24 @@ void configureWithFormat(const Dims* inputDims, int nbInputs, const Dims* output
     std::cout << std::endl;
 }
 
-int initialize() override
+int32_t initialize() noexcept override
 {
     std::cout << "initialize called" << std::endl;
     return (0);
 }
 
-void terminate() override
+void terminate() noexcept override
 {
     std::cout << "terminate called" << std::endl;
 }
 
-size_t getWorkspaceSize(int maxBatchSize) const override
+size_t getWorkspaceSize(int32_t maxBatchSize) const noexcept override
 {
     return (0);
 }
 
-int enqueue(int batchSize, const void* const* inputs, void** outputs, void* workspace, cudaStream_t stream) override
+int32_t enqueue(int32_t batchSize, void const* const* inputs, void* const* outputs, void* workspace,
+         cudaStream_t stream) noexcept override
 {
     std::cout << "Process started!" << std::endl;    
 
@@ -133,17 +135,17 @@ int enqueue(int batchSize, const void* const* inputs, void** outputs, void* work
     return (0);
 }
 
-size_t getSerializationSize() const override
+size_t getSerializationSize() const noexcept override
 {
     return (message.SerializeAsString().size());
 }
 
-void serialize(void* buffer) const override
+void serialize(void* buffer) const noexcept override
 {
     message.SerializeToArray(buffer, getSerializationSize());
 }
 
-void destroy() override
+void destroy() noexcept override
 {
     std::cout << "destroy called" << std::endl;
 }
@@ -155,36 +157,38 @@ IPluginV2* clone() const override
 }
 #endif
 
-void setPluginNamespace(const char* pluginNamespace) override
+void setPluginNamespace(AsciiChar const* pluginNamespace) noexcept override
 {
 }
 
-const char* getPluginNamespace() const override
+AsciiChar const* getPluginNamespace() const noexcept override
 {
     return ("macnica_trt_plugins");
 }
 
-nvinfer1::DataType getOutputDataType(int index, const nvinfer1::DataType* inputTypes, int nbInputs) const
+nvinfer1::DataType getOutputDataType(int32_t index, nvinfer1::DataType const* inputTypes, int32_t nbInputs) const noexcept
 {
     return (DataType::kFLOAT);
 }
 
-bool isOutputBroadcastAcrossBatch(int outputIndex, const bool* inputIsBroadcasted, int nbInputs) const
+bool isOutputBroadcastAcrossBatch(int32_t outputIndex, bool const* inputIsBroadcasted, int32_t nbInputs) const noexcept
 {
     return (false);
 }
 
-bool canBroadcastInputAcrossBatch(int inputIndex) const
+bool canBroadcastInputAcrossBatch(int32_t inputIndex) const noexcept
 {
     return (false);
 }
 
-void configurePlugin(const Dims* inputDims, int nbInputs, const Dims* outputDims, int nbOutputs, const DataType* inputTypes, const DataType* outputTypes, const bool* inputIsBroadcast, const bool* outputIsBroadcast, PluginFormat floatFormat, int maxBatchSize)
+void configurePlugin(Dims const* inputDims, int32_t nbInputs, Dims const* outputDims, int32_t nbOutputs,
+         DataType const* inputTypes, DataType const* outputTypes, bool const* inputIsBroadcast,
+         bool const* outputIsBroadcast, PluginFormat floatFormat, int32_t maxBatchSize) noexcept
 {
     std::cout << "configureWithFormat called" << std::endl;
 }
 
-IPluginV2Ext* clone() const
+IPluginV2Ext* clone() const noexcept
 {
     return (new CopyPlugin(message));
 }
@@ -199,38 +203,38 @@ CopyPluginCreator()
 {
 }
 
-const char* getPluginName() const override
+AsciiChar const* getPluginName() const noexcept override
 {
     return ("copy");
 }
     
-const char* getPluginVersion() const override
+AsciiChar const* getPluginVersion() const noexcept override
 {
     return ("1");
 }
 
-const PluginFieldCollection* getFieldNames() override
+PluginFieldCollection const* getFieldNames() noexcept override
 {
     return (nullptr);
 }
   
-IPluginV2* createPlugin(const char* name, const PluginFieldCollection* fc) override
+IPluginV2* createPlugin(AsciiChar const* name, PluginFieldCollection const* fc) noexcept override
 {
     return (nullptr);
 }
  
-IPluginV2* deserializePlugin(const char* name, const void* serialData, size_t serialLength) override
+IPluginV2* deserializePlugin(AsciiChar const* name, void const* serialData, size_t serialLength) noexcept override
 {
     copy_Message message;
     message.ParseFromArray(serialData, serialLength);
     return (new CopyPlugin(message));
 }
  
-void setPluginNamespace(const char* pluginNamespace) override
+void setPluginNamespace(AsciiChar const* pluginNamespace) noexcept override
 {
 }
  
-const char* getPluginNamespace() const override
+AsciiChar const* getPluginNamespace() const noexcept override
 {
     return ("macnica_trt_plugins");
 }
