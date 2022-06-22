@@ -14,18 +14,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         libprotobuf* \
         protobuf-compiler \
-        ninja-build \
         graphviz && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install pydotplus graphviz
-
-#RUN git clone https://github.com/NVIDIA-AI-IOT/torch2trt && \
-RUN git clone https://github.com/chitoku/torch2trt --branch jp4.6_tensorrt8 && \
-    cd torch2trt && \
-    python3 setup.py install --plugins && \
-    cd ../ && \
-    rm -rf torch2trt
+RUN pip3 install graphviz onnx pydot
 
 WORKDIR /
 
@@ -33,6 +25,8 @@ RUN mkdir /${REPOSITORY_NAME}
 COPY ./ /${REPOSITORY_NAME}
 
 RUN cd /${REPOSITORY_NAME}/plugin && \
+    protoc --cpp_out=./ --python_out=./ trt_plugin.proto && \
+    mv trt_plugin.pb.cc trt_plugin.pb.cpp && \
 	mkdir build && \
 	cd build && \
 	cmake .. && \
