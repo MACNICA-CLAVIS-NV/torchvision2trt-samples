@@ -125,7 +125,13 @@ dGPUの場合の実行環境はNGCの [PyTorchイメージ](https://catalog.ngc.
     cd /torchvision2trt-samples/plugin
     ```
     ```
-    rm -R build
+    protoc --cpp_out=./ --python_out=./ trt_plugin.proto
+    ```
+    ```
+    mv trt_plugin.pb.cc trt_plugin.pb.cpp
+    ```
+    ```
+    rm -rf build
     ```
     ```
     mkdir build
