@@ -61,6 +61,8 @@ You need to restart Jetson after the swap memory expansion.
 
 ### Install Torch-TensorRT
 
+*Please note that only the Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) requires this installation.*
+
 After the container build, please install Torch-TensorRT with the [install_torch_tensorrt](./install_torch_tensorrt.ipynb) notebook.
 
 1. Launch a named (persistent) container with the docker_run_named.sh script.
@@ -81,8 +83,6 @@ After the container build, please install Torch-TensorRT with the [install_torch
     ```
     sudo docker rm my-torchvision2trt-samples
     ```
-
-*Please note that only the Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) requires this installation.*
 
 ## Usage
 
