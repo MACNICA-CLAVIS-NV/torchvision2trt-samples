@@ -35,7 +35,7 @@
 
 ### dGPU
 
-- X86 64-bit Computer and NVIDIA GPU card
+- x86 64-bit Computer and NVIDIA GPU card
 - [NVIDIA NGC](https://catalog.ngc.nvidia.com/) Account
 
 ## Installation (For Jetson)
@@ -109,7 +109,7 @@ After the container build, please install Torch-TensorRT with the [install_torch
     ./scripts/docker_build_x86.sh
     ```
 
-*Torch-TensorRT is preinstalled in the [PyTorch container images](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch) at NVIDIA NGC.*
+*Torch-TensorRT is preinstalled in the [PyTorch container images](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch) which are the base image of this application.*
 
 ## Usage
 

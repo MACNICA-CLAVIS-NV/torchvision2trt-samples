@@ -3,6 +3,7 @@
 *Read this in [English](README.md)*
 
 ## このアプリケーションが行うこと
+
 - Torchvisionで提供される学習済みディープニューラルネットワークモデル（以下、学習済みモデル）をNVIDIA TensorRT高速推論エンジンに変換する方法を解説するJupyterノートブックを提供しています。
 - 併せて、NVIDIA CUDAとNVIDIA CuDNNを利用したTensorRTカスタムレイヤープラグインのサンプルコードも提示します。
 
@@ -39,7 +40,7 @@
 ## インストール方法（Jetson）
 
 - **このアプリケーションはDockerfileを使ってインストールできます。ユーザーがgit cloneコマンドを実行する必要はありません。**
-- **このアプリケーションはNVIDIA NGC上で公開されている[Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml) をベースにしています。**
+- **このアプリケーションはNVIDIA NGC上で公開されている [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml) をベースにしています。**
 
 ### Docker環境の設定変更
 
@@ -76,7 +77,7 @@
     ./scripts/docker_run_named.sh
     ```
 
-1. [localhost:8888](http://localhost:8888)をウェブブラウザで開きます。PCからリモートログインした場合は、**localhost**の部分をJetsonのIPアドレスに変更してください。
+1. [localhost:8888](http://localhost:8888) をウェブブラウザで開きます。PCからリモートログインした場合は、**localhost**の部分をJetsonのIPアドレスに変更してください。
 パスワードを問われますので　**"nvidia"**　を入力します。
 
 1. install_torch_tensorrtノートブックを、**/torchvision2trt-samples**ディレクトリから見つけ、そのノートブック内に記載の指示に従い、Torch-TensorRTをインストールします。
