@@ -26,11 +26,21 @@
     ![](./doc/torchvision-trtapi.svg)
 
 ## Prerequisites
+
+### Jetson
+
 - NVIDIA Jetson Series Developer Kits
 - NVIDIA JetPack 4.4 or later
     - The Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) needs JetPack 4.6 or later.
 
+### dGPU
+
+- X86 64-bit Computer and NVIDIA GPU card
+- [NVIDIA NGC](https://catalog.ngc.nvidia.com/) Account
+
 ## Installation
+
+### Jetson
 
 - **This application can be installed with Dockerfile so that you don't need to clone this repository manually.**
 - **This application will be built on [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml) which is distributed from NVIDIA NGC.**
