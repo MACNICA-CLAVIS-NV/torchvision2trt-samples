@@ -50,13 +50,14 @@ You need to restart Jetson after the swap memory expansion.
 
 1. Clone this repository.
     ```
-    $ git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
+    git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
     ```
 1. Build a docker image
     ```
-    $ cd torchvision2trt-samples
-    
-    $ ./scripts/docker_build.sh
+    cd torchvision2trt-samples
+    ```
+    ```
+    ./scripts/docker_build.sh
     ```
 
 ### Install Torch-TensorRT
@@ -90,7 +91,7 @@ After the container build, please install Torch-TensorRT with the [install_torch
 
 1. Run a docker container generated from the image built as the above.
     ```
-    $ ./scripts/docker_run.sh
+    ./scripts/docker_run.sh
     ```
 1. Open [localhost:8888](http://localhost:8888) from Web browser, and input the password **"nvidia"**.
 
@@ -105,15 +106,21 @@ After the container build, please install Torch-TensorRT with the [install_torch
 2. Follow the following the following instruction.
 
     ```
-    # cd /torchvision2trt-samples/plugin
-
-    # rm -R build
-
-    # mkdir build
-
-    # cd build
-
-    # cmake ..
+    cd /torchvision2trt-samples/plugin
+    ```
+    ```
+    rm -R build
+    ```
+    ```
+    mkdir build
+    ```
+    ```
+    cd build
+    ```
+    ```
+    cmake ..
+    ```
+    ```
     -- The CXX compiler identification is GNU 7.5.0
     -- The CUDA compiler identification is NVIDIA 10.2.89
     -- Check for working CXX compiler: /usr/bin/c++
@@ -155,8 +162,11 @@ After the container build, please install Torch-TensorRT with the [install_torch
     -- Configuring done
     -- Generating done
     -- Build files have been written to: /torchvision2trt-samples/plugin/build
-
-    # make
+    ```
+    ```
+    make
+    ```
+    ```
     Scanning dependencies of target PoolingPlugin
     [ 12%] Building CUDA object CMakeFiles/PoolingPlugin.dir/PoolingAlgo.cu.o
     [ 25%] Building CXX object CMakeFiles/PoolingPlugin.dir/CudaPooling.cpp.o
@@ -172,6 +182,6 @@ After the container build, please install Torch-TensorRT with the [install_torch
 ## References
 
 - [NVIDIA TensorRT](https://developer.nvidia.com/tensorrt)
-- [NVIDIA-AI-IOT/torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt)
-- [Developing Real-time Neural Networks for Jetson](https://www.nvidia.com/en-us/gtc/on-demand/?search=22676)
+- [Torch-TensorRT master documentation](https://pytorch.org/TensorRT/)
+- [pytorch/TensorRT - GitHub](https://github.com/pytorch/TensorRT)
 - [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml)
