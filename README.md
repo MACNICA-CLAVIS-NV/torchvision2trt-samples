@@ -16,9 +16,10 @@
     This notebook shows how to convert a pre-trained PyTorch model to a ONNX model first, and also shows how to do inference by TensorRT with the ONNX model.  
     ![](./doc/torchvision-onnx.svg)
 
-1. **TensorRT inference with torch2trt** \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
-    This notebook shows how to import a pre-trained PyTorch model to TensorRT with [torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt). This notebook also shows how to use custom layers with torch2trt.  
-    ![](./doc/torchvision-torch2trt.svg)
+1. **TensorRT inference with Torch-TensorRT** \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\)  
+    This notebook shows how to import a pre-trained PyTorch model to TensorRT with [Torch-TensorRT](https://github.com/pytorch/TensorRT).  
+    ![](./doc/torchvision-torch-tensorrt.svg)
+    You need to install Torch-TensorRT in the Docker container separately. Please refer to [\"Install Torch-TensorRT\"](#install-torch-tensorrt) for the details.
 
 1. **TensorRT Inference with TensorRT API** \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
     This notebook  shows how to import a pre-trained PyTorch model data (weights and bias) with a user-defined network with the TensorRT API. This notebook also shows how to use custom layers with the TensorRT API.  
@@ -26,7 +27,8 @@
 
 ## Prerequisites
 - NVIDIA Jetson Series Developer Kits
-- NVIDIA JetPack 4.4 or later (4.4 Developer Preview is not supported.)
+- NVIDIA JetPack 4.4 or later
+    - The Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) needs JetPack 4.6 or later.
 
 ## Installation
 
@@ -54,10 +56,33 @@ You need to restart Jetson after the swap memory expansion.
     ```
     $ cd torchvision2trt-samples
     
-    $ chmod +x ./scripts/*.sh
-    
     $ ./scripts/docker_build.sh
     ```
+
+### Install Torch-TensorRT
+
+After the container build, please install Torch-TensorRT with the [install_torch_tensorrt](./install_torch_tensorrt.ipynb) notebook.
+
+1. Launch a named (persistent) container with the docker_run_named.sh script.
+    ```
+    ./scripts/docker_run_named.sh
+    ```
+
+1.  Open [localhost:8888](http://localhost:8888) from Web browser, and input the password **"nvidia"**.
+
+1. You can find \"install_torch_tensorrt\" notebook at the **/torchvision2trt-samples** directory. Please follow the instruction in the notebook. The build process takes about one hour. After the build is completed, exit from Jupyter, then exit from the Docker container. 
+
+1. Committed the container to the image.
+    ```
+    ./scripts/docker_commit.sh
+    ```
+
+1. Now you can remove the container.
+    ```
+    sudo docker rm my-torchvision2trt-samples
+    ```
+
+*Please note that only the Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) requires this installation.*
 
 ## Usage
 
