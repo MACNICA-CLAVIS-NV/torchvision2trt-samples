@@ -38,9 +38,7 @@
 - X86 64-bit Computer and NVIDIA GPU card
 - [NVIDIA NGC](https://catalog.ngc.nvidia.com/) Account
 
-## Installation
-
-### Jetson
+## Installation (For Jetson)
 
 - **This application can be installed with Dockerfile so that you don't need to clone this repository manually.**
 - **This application will be built on [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml) which is distributed from NVIDIA NGC.**
@@ -95,14 +93,39 @@ After the container build, please install Torch-TensorRT with the [install_torch
     sudo docker rm my-torchvision2trt-samples
     ```
 
+## Installation (For dGPU)
+
+### Build a docker image locally
+
+1. Clone this repository.
+    ```
+    git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
+    ```
+1. Build a docker image
+    ```
+    cd torchvision2trt-samples
+    ```
+    ```
+    ./scripts/docker_build_x86.sh
+    ```
+
+*Torch-TensorRT is preinstalled in the [PyTorch container images](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch) at NVIDIA NGC.*
+
 ## Usage
 
 **For Jetson Nano, you sometimes see the low memory warning on Jetson's L4T desktop while you run these notebooks. To run these notebooks on Jetson Nano, logout the desktop, and login to the Jetson Nano from your PC with network access, and open these notebooks in a Web browser of your PC remotely. It seems that this method reduces Jetson Nano's memory usage.**
 
 1. Run a docker container generated from the image built as the above.
+
+    **For Jetson**
     ```
     ./scripts/docker_run.sh
     ```
+    **For dGPU**
+    ```
+    ./scripts/docker_run_x86.sh
+    ```
+
 1. Open [localhost:8888](http://localhost:8888) from Web browser, and input the password **"nvidia"**.
 
 1. You can find these samples at the **/torchvision2trt-samples** directory as the following picture.
