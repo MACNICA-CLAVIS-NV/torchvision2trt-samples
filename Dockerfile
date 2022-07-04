@@ -27,6 +27,7 @@ COPY ./ /${REPOSITORY_NAME}
 RUN cd /${REPOSITORY_NAME}/plugin && \
     protoc --cpp_out=./ --python_out=./ trt_plugin.proto && \
     mv trt_plugin.pb.cc trt_plugin.pb.cpp && \
+    rm -rf build && \
 	mkdir build && \
 	cd build && \
 	cmake .. && \
