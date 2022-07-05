@@ -2,7 +2,7 @@
 
 set -eu
 
-IMAGE_TAG="22.05-py3"
+IMAGE_TAG="22.06-py3"
 if [ ${#} -gt 0 ]
 then
     IMAGE_TAG=${1}
