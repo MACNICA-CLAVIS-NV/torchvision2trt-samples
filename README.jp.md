@@ -20,7 +20,8 @@
 1. **TensorRT inference with Torch-TensorRT** \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\)  
     [Torch-TensorRT](https://github.com/pytorch/TensorRT) を利用して、学習済みPyTorchモデルをTensorRTにインポートする方法を解説します。  
     ![](./doc/torchvision-torch-tensorrt.svg)
-    このノートブックをご利用の場合は、Dockerコンテナに別途、Torch-TensorRTをインストールいただく必要があります。詳細は [Torch-TensorRTのインストール方法](#torch-tensorrt-のインストール方法) をご覧ください。
+    このノートブックをご利用の場合は、Dockerコンテナに別途、Torch-TensorRTをインストールいただく必要があります。詳細は [Torch-TensorRTのインストール方法](#torch-tensorrt-のインストール方法) をご覧ください。  
+    なお、本ノートブックは実メモリーサイズの制約で、Jetson Nano/TX1/TX2はサポートしません。
 
 1. **TensorRT Inference with TensorRT API** \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
     学習済みPyTorchモデルから重みデータとバイアスデータのみを取り出し、TensorRT APIを利用して構築したネットワーク構造に適用して、TensorRTで推論します。併せて、カスタムレイヤーを使う方法も提示します。
@@ -71,6 +72,8 @@
 *Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) を動作させる場合にのみこのインストールが必要です。*
 
 コンテナイメージをビルドした後、[install_torch_tensorrt](./install_torch_tensorrt.ipynb) ノートブックでTorch-TensorRTをインストールします。
+
+***JetPack 5.0 / L4T(Jetson Linux) 34.1 以降のみ*
 
 1. docker_run_named.shスクリプトで、名前付き、かつ、永続的なコンテナを起動します。
     ```
