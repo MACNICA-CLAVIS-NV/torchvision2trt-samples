@@ -32,7 +32,7 @@
 
 - NVIDIA Jetson Series Developer Kits
 - NVIDIA JetPack 4.4 or later
-    - The Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) needs JetPack 4.6 or later.
+    - The Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) needs JetPack 5.0 or later.
 
 ### dGPU
 

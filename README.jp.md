@@ -32,7 +32,7 @@
 ### Jetson
 - NVIDIA Jetsonシリーズの開発者キット
 - NVIDIA JetPack 4.4 とそれ以降
-    - Torch-TensorRT サンプル \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) をご利用の場合は JetPack 4.6以降
+    - Torch-TensorRT サンプル \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) をご利用の場合は JetPack 5.0 以降
 
 ### dGPU
 - NVIDIA GPUカードを搭載したx86 64-bitコンピューター
