@@ -1,12 +1,12 @@
-ARG BASE_IMAGE=nvcr.io/nvidia/l4t-ml:r32.6.1-py3
+ARG BASE_IMAGE=nvcr.io/nvidia/pytorch:22.05-py3
 FROM ${BASE_IMAGE}
 
 ARG REPOSITORY_NAME=torchvision2trt-samples
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
-ENV PATH="/usr/local/cuda/bin:${PATH}"
-ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
+# ENV PATH="/usr/local/cuda/bin:${PATH}"
+# ENV LD_LIBRARY_PATH="/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
 
 WORKDIR /tmp
 
@@ -17,7 +17,7 @@ RUN apt-get update && \
         graphviz && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install graphviz onnx pydot
+RUN pip3 install graphviz onnx pydot JupyterLab pycuda
 
 WORKDIR /
 
@@ -34,3 +34,5 @@ RUN cd /${REPOSITORY_NAME}/plugin && \
 	make
 
 WORKDIR /
+
+ENTRYPOINT ["/bin/bash", "-c", "jupyter lab --ip 0.0.0.0 --port 8888 --allow-root", "&>/var/log/jupyter.log"]

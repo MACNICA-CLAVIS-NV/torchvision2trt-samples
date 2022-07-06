@@ -16,19 +16,30 @@
     This notebook shows how to convert a pre-trained PyTorch model to a ONNX model first, and also shows how to do inference by TensorRT with the ONNX model.  
     ![](./doc/torchvision-onnx.svg)
 
-1. **TensorRT inference with torch2trt** \([torchvision_torch2trt.ipynb](./torchvision_torch2trt.ipynb)\)  
-    This notebook shows how to import a pre-trained PyTorch model to TensorRT with [torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt). This notebook also shows how to use custom layers with torch2trt.  
-    ![](./doc/torchvision-torch2trt.svg)
+1. **TensorRT inference with Torch-TensorRT** \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\)  
+    This notebook shows how to import a pre-trained PyTorch model to TensorRT with [Torch-TensorRT](https://github.com/pytorch/TensorRT).  
+    ![](./doc/torchvision-torch-tensorrt.svg)
+    You need to install Torch-TensorRT in the Docker container separately. Please refer to [\"Install Torch-TensorRT\"](#install-torch-tensorrt) for the details.  
+    **Jetson Nano/TX1/TX2 are not supported by this notebook.**
 
 1. **TensorRT Inference with TensorRT API** \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
     This notebook  shows how to import a pre-trained PyTorch model data (weights and bias) with a user-defined network with the TensorRT API. This notebook also shows how to use custom layers with the TensorRT API.  
     ![](./doc/torchvision-trtapi.svg)
 
 ## Prerequisites
-- NVIDIA Jetson Series Developer Kits
-- NVIDIA JetPack 4.4 or later (4.4 Developer Preview is not supported.)
 
-## Installation
+### Jetson
+
+- NVIDIA Jetson Series Developer Kits
+- NVIDIA JetPack 4.4 or later
+    - The Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) needs JetPack 4.6 or later.
+
+### dGPU
+
+- x86 64-bit Computer and NVIDIA GPU card
+- [NVIDIA NGC](https://catalog.ngc.nvidia.com/) Account
+
+## Installation (For Jetson)
 
 - **This application can be installed with Dockerfile so that you don't need to clone this repository manually.**
 - **This application will be built on [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml) which is distributed from NVIDIA NGC.**
@@ -48,25 +59,76 @@ You need to restart Jetson after the swap memory expansion.
 
 1. Clone this repository.
     ```
-    $ git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
+    git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
     ```
 1. Build a docker image
     ```
-    $ cd torchvision2trt-samples
-    
-    $ chmod +x ./scripts/*.sh
-    
-    $ ./scripts/docker_build.sh
+    cd torchvision2trt-samples
     ```
+    ```
+    ./scripts/docker_build.sh
+    ```
+
+### Install Torch-TensorRT
+
+*Please note that only the Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) requires this installation.*
+
+After the container build, please install Torch-TensorRT with the [install_torch_tensorrt](./install_torch_tensorrt.ipynb) notebook. 
+
+**[ Only for JetPack 5.0 / L4T(Jetson Linux) 34.1 or later ]**
+
+1. Launch a named (persistent) container with the docker_run_named.sh script.
+    ```
+    ./scripts/docker_run_named.sh
+    ```
+
+1.  Open [localhost:8888](http://localhost:8888) from Web browser, and input the password **"nvidia"**.
+
+1. You can find \"install_torch_tensorrt\" notebook at the **/torchvision2trt-samples** directory. Please follow the instruction in the notebook. The build process takes about one hour. After the build is completed, exit from Jupyter, then exit from the Docker container. 
+
+1. Committed the container to the image.
+    ```
+    ./scripts/docker_commit.sh
+    ```
+
+1. Now you can remove the container.
+    ```
+    sudo docker rm my-torchvision2trt-samples
+    ```
+
+## Installation (For dGPU)
+
+### Build a docker image locally
+
+1. Clone this repository.
+    ```
+    git clone https://github.com/MACNICA-CLAVIS-NV/torchvision2trt-samples
+    ```
+1. Build a docker image
+    ```
+    cd torchvision2trt-samples
+    ```
+    ```
+    ./scripts/docker_build_x86.sh
+    ```
+
+*Torch-TensorRT is preinstalled in the [PyTorch container images](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch) which are the base image of this application.*
 
 ## Usage
 
 **For Jetson Nano, you sometimes see the low memory warning on Jetson's L4T desktop while you run these notebooks. To run these notebooks on Jetson Nano, logout the desktop, and login to the Jetson Nano from your PC with network access, and open these notebooks in a Web browser of your PC remotely. It seems that this method reduces Jetson Nano's memory usage.**
 
 1. Run a docker container generated from the image built as the above.
+
+    **For Jetson**
     ```
-    $ ./scripts/docker_run.sh
+    ./scripts/docker_run.sh
     ```
+    **For dGPU**
+    ```
+    ./scripts/docker_run_x86.sh
+    ```
+
 1. Open [localhost:8888](http://localhost:8888) from Web browser, and input the password **"nvidia"**.
 
 1. You can find these samples at the **/torchvision2trt-samples** directory as the following picture.
@@ -80,15 +142,27 @@ You need to restart Jetson after the swap memory expansion.
 2. Follow the following the following instruction.
 
     ```
-    # cd /torchvision2trt-samples/plugin
-
-    # rm -R build
-
-    # mkdir build
-
-    # cd build
-
-    # cmake ..
+    cd /torchvision2trt-samples/plugin
+    ```
+    ```
+    protoc --cpp_out=./ --python_out=./ trt_plugin.proto
+    ```
+    ```
+    mv trt_plugin.pb.cc trt_plugin.pb.cpp
+    ```
+    ```
+    rm -rf build
+    ```
+    ```
+    mkdir build
+    ```
+    ```
+    cd build
+    ```
+    ```
+    cmake ..
+    ```
+    ```
     -- The CXX compiler identification is GNU 7.5.0
     -- The CUDA compiler identification is NVIDIA 10.2.89
     -- Check for working CXX compiler: /usr/bin/c++
@@ -130,8 +204,11 @@ You need to restart Jetson after the swap memory expansion.
     -- Configuring done
     -- Generating done
     -- Build files have been written to: /torchvision2trt-samples/plugin/build
-
-    # make
+    ```
+    ```
+    make
+    ```
+    ```
     Scanning dependencies of target PoolingPlugin
     [ 12%] Building CUDA object CMakeFiles/PoolingPlugin.dir/PoolingAlgo.cu.o
     [ 25%] Building CXX object CMakeFiles/PoolingPlugin.dir/CudaPooling.cpp.o
@@ -147,6 +224,6 @@ You need to restart Jetson after the swap memory expansion.
 ## References
 
 - [NVIDIA TensorRT](https://developer.nvidia.com/tensorrt)
-- [NVIDIA-AI-IOT/torch2trt](https://github.com/NVIDIA-AI-IOT/torch2trt)
-- [Developing Real-time Neural Networks for Jetson](https://www.nvidia.com/en-us/gtc/on-demand/?search=22676)
+- [Torch-TensorRT master documentation](https://pytorch.org/TensorRT/)
+- [pytorch/TensorRT - GitHub](https://github.com/pytorch/TensorRT)
 - [Machine Learning for Jetson/L4T](https://ngc.nvidia.com/catalog/containers/nvidia:l4t-ml)

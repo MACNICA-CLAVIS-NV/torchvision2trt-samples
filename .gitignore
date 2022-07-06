@@ -1,2 +1,16 @@
+__pycache__
+.ipynb_checkpoints
+plugin/build
 jetson-ota-public.asc
 nvidia-l4t-apt-source.list
+imagenet_class_index.json
+model.onnx
+model.trt
+model_trtapi.trt
+model.dot
+model.png
+trt_ts_module.ts
+trt_ts_module_half.ts
+trt_script_module.ts
+trt_script_module_half.ts
+log.txt
