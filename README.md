@@ -19,7 +19,8 @@
 1. **TensorRT inference with Torch-TensorRT** \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\)  
     This notebook shows how to import a pre-trained PyTorch model to TensorRT with [Torch-TensorRT](https://github.com/pytorch/TensorRT).  
     ![](./doc/torchvision-torch-tensorrt.svg)
-    You need to install Torch-TensorRT in the Docker container separately. Please refer to [\"Install Torch-TensorRT\"](#install-torch-tensorrt) for the details.
+    You need to install Torch-TensorRT in the Docker container separately. Please refer to [\"Install Torch-TensorRT\"](#install-torch-tensorrt) for the details.  
+    **Jetson Nano/TX1/TX2 are not supported by this notebook.**
 
 1. **TensorRT Inference with TensorRT API** \([torchvision_trtapi.ipynb](./torchvision_trtapi.ipynb)\)  
     This notebook  shows how to import a pre-trained PyTorch model data (weights and bias) with a user-defined network with the TensorRT API. This notebook also shows how to use custom layers with the TensorRT API.  
@@ -72,7 +73,9 @@ You need to restart Jetson after the swap memory expansion.
 
 *Please note that only the Torch-TensorRT sample \([torchvision_torch_tensorrt.ipynb](./torchvision_torch_tensorrt.ipynb)\) requires this installation.*
 
-After the container build, please install Torch-TensorRT with the [install_torch_tensorrt](./install_torch_tensorrt.ipynb) notebook.
+After the container build, please install Torch-TensorRT with the [install_torch_tensorrt](./install_torch_tensorrt.ipynb) notebook. 
+
+**[ Only for JetPack 5.0 / L4T(Jetson Linux) 34.1 or later ]**
 
 1. Launch a named (persistent) container with the docker_run_named.sh script.
     ```
